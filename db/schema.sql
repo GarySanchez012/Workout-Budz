@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS Workout_Budz_db;
+
+CREATE DATABASE Workout_Budz_db;
