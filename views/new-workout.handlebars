@@ -1,0 +1,25 @@
+<section>
+  <h2>Create New Workout</h2>
+
+  <form class="new-post-form">
+    <div>
+      <label for="post-title">Title</label>
+      <input type="text" id="post-title" name="post-title" />
+    </div>
+    <div>
+      <label for="post-url">Link</label>
+      <input id="post-url" name="post-url" />
+    </div>
+    <div>
+        {{#each exercises }}
+            <img src={{gifUrl}} />
+            <input type="checkbox" name={{name}} value={{name}}>
+            <label for={{name}}> {{name}}</label><br>
+        {{/each}}
+
+    </div>
+
+
+    <button type="submit" class="btn">Create</button>
+  </form>
+</section>
