@@ -5,21 +5,27 @@ const { Workout, User, Comment } = require('../models');
 // get all posts for homepage
 router.get('/', (req, res) => {
   console.log('======================');
-  Workout.findAll({
-    // include: [
-    //   {
-    //     model: Comment,
-    //     attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-    //     include: {
-    //       model: User,
-    //       attributes: ['username']
-    //     }
-    //   },
-    //   {
-    //     model: User,
-    //     attributes: ['username']
-    //   }
-    // ]
+  Post.findAll({
+    attributes: [
+      'id',
+      'post_url',
+      'title',
+      'created_at',
+    ],
+    include: [
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
+      },
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
   })
     .then(dbWorkoutData => {
       const workouts = dbWorkoutData.map(workout => workout.get({ plain: true }));
