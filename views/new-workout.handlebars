@@ -28,7 +28,7 @@
     {{#each workouts as |workout|}}
     <li>
       {{> workout-info workout}}
-      <a  class="delete-link" data-id={{workout.id}}>Edit post</a>
+      <button class="delete-link" data-id={{workout.id}}>Delete Workout</button>
     </li>
     {{/each}}
   </ol>
