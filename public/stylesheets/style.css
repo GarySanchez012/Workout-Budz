@@ -95,17 +95,48 @@ main {
 }
 
 .login-form {
-  float: left;
-  margin-left: 370px;
+  flex-wrap: wrap;
+  display: inline;
+  padding-right: 5%;
+  padding-bottom: 2%;
 }
 
 .signup-form {
-  float : right;
-  margin-right: 370px;
+  flex-wrap: wrap;
+  display: inline;
+}
+
+.ui[class*="center aligned"].grid {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.ui.grid {
+    margin-top: -1rem;
+    margin-bottom: -1rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
+
+.ui.grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  padding: 0em;
 }
 
 img {
-  
+
 }
 
 .btn-no-style {
