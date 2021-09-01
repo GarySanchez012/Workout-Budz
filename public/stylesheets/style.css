@@ -94,50 +94,49 @@ main {
   padding: 2% 4%;
 }
 
-.login-form {
-  flex-wrap: wrap;
-  display: inline;
-  padding-right: 5%;
-  padding-bottom: 2%;
-}
-
-.signup-form {
-  flex-wrap: wrap;
-  display: inline;
-}
 
 .ui[class*="center aligned"].grid {
-  -webkit-box-pack: center;
+  background-color: purple;
   -ms-flex-pack: center;
   justify-content: center;
+  border-radius: 15px;
+  border: 3px solid #024e76;
+  padding: 20px;
+  width: 50%;
+  margin-top: 85px;
+  box-shadow: 0 0 10px rgb(250 0 0 / 100%)
 }
 
-.ui.grid {
-    margin-top: -1rem;
-    margin-bottom: -1rem;
-    margin-left: -1rem;
-    margin-right: -1rem;
-}
+
 
 .ui.grid {
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
-  padding: 0em;
 }
 
-img {
-
+body > .grid {
+  height: 100%;
 }
+
+.budz {
+  background-attachment: fixed;
+  background-image: url(./images/image.png);
+  background-size: contain;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  overflow: hidden;
+  padding-bottom: 240px;
+}
+
 
 .btn-no-style {
   background: none;
