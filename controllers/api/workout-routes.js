@@ -9,14 +9,6 @@ router.get('/', (req, res) => {
   Workout.findAll({
    
     include: [
-      // {
-      //   model: Comment,
-      //   attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-      //   include: {
-      //     model: User,
-      //     attributes: ['username']
-      //   }
-      // },
       {
         model: User,
         attributes: ['username']
@@ -35,16 +27,7 @@ router.get('/:id', (req, res) => {
     where: {
       id: req.params.id
     },
-    
     include: [
-      // {
-      //   model: Comment,
-      //   attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-      //   include: {
-      //     model: User,
-      //     attributes: ['username']
-      //   }
-      // },
       {
         model: User,
         attributes: ['username']
@@ -66,7 +49,6 @@ router.get('/:id', (req, res) => {
 
 router.post('/', withAuth, (req, res) => {
   console.log(req.body);
-  // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
   req.body.user_id= req.session.user_id
   Workout.create(req.body)
     .then(dbWorkoutData => res.json(dbWorkoutData))
