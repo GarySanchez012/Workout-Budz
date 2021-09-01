@@ -1,6 +1,13 @@
 const router = require('express').Router();
+<<<<<<< HEAD
 const sequelize = require('../config/connection');
 const { Post, User, Comment, Vote } = require('../models');
+=======
+const axios = require("axios").default;
+
+const sequelize = require('../config/connection');
+const { Post, User, Comment } = require('../models');
+>>>>>>> 35910b69a61e67c169645ccca2cb9515131bf107
 const withAuth = require('../utils/auth');
 
 // get all posts for dashboard
@@ -16,7 +23,10 @@ router.get('/', withAuth, (req, res) => {
       'post_url',
       'title',
       'created_at',
+<<<<<<< HEAD
       [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+=======
+>>>>>>> 35910b69a61e67c169645ccca2cb9515131bf107
     ],
     include: [
       {
@@ -50,7 +60,10 @@ router.get('/edit/:id', withAuth, (req, res) => {
       'post_url',
       'title',
       'created_at',
+<<<<<<< HEAD
       [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+=======
+>>>>>>> 35910b69a61e67c169645ccca2cb9515131bf107
     ],
     include: [
       {
@@ -84,4 +97,52 @@ router.get('/edit/:id', withAuth, (req, res) => {
     });
 });
 
+<<<<<<< HEAD
+=======
+
+// render the page for creating a new workout
+router.get('/new-workout', (req,res) => {
+
+  // utility functiuon for getting a number of random exercises
+  function getRandom(arr, n) {
+    var result = new Array(n),
+        len = arr.length,
+        taken = new Array(len);
+    if (n > len)
+        throw new RangeError("getRandom: more elements taken than available");
+    while (n--) {
+        var x = Math.floor(Math.random() * len);
+        result[n] = arr[x in taken ? taken[x] : x];
+        taken[x] = --len in taken ? taken[len] : len;
+    }
+    return result;
+}
+///////
+
+  var options = {
+    method: 'GET',
+    url: 'https://exercisedb.p.rapidapi.com/exercises',
+    headers: {
+      'x-rapidapi-host': 'exercisedb.p.rapidapi.com',
+      'x-rapidapi-key': 'cbc9fd7adamsh96d9cb7275356fdp1c3be7jsnb042cd7c36b8'
+    }
+  };
+
+  axios.request(options).then(function (response) {
+    console.log(response.data);
+
+    // const firstFive = response.data.slice(0, 5);
+
+    const randomFive = getRandom(response.data, 5);
+
+    res.render('new-workout', {
+      exercises: randomFive
+    })
+
+  }).catch(function (error) {
+    console.error(error);
+  });
+})
+
+>>>>>>> 35910b69a61e67c169645ccca2cb9515131bf107
 module.exports = router;

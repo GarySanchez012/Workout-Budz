@@ -3,13 +3,25 @@
 }
 
 body, html {
+<<<<<<< HEAD
+=======
+  background-color: #082952;
+>>>>>>> 35910b69a61e67c169645ccca2cb9515131bf107
   height: 100%;
   padding: 0;
   margin: 0;
   font-family: sans-serif;
+<<<<<<< HEAD
   color: #333;
 }
 
+=======
+  color: rgb(201, 23, 23);
+}
+
+
+
+>>>>>>> 35910b69a61e67c169645ccca2cb9515131bf107
 a {
   text-decoration: none;
   color: #225ca3;
@@ -91,6 +103,53 @@ main {
   padding: 2% 4%;
 }
 
+<<<<<<< HEAD
+=======
+
+.ui[class*="center aligned"].grid {
+  background-color: purple;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 15px;
+  border: 3px solid #024e76;
+  padding: 20px;
+  width: 50%;
+  margin-top: 85px;
+  box-shadow: 0 0 10px rgb(250 0 0 / 100%)
+}
+
+
+
+.ui.grid {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+body > .grid {
+  height: 100%;
+}
+
+.budz {
+  background-attachment: fixed;
+  background-image: url(./images/image.png);
+  background-size: contain;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  overflow: hidden;
+  padding-bottom: 240px;
+}
+
+
+>>>>>>> 35910b69a61e67c169645ccca2cb9515131bf107
 .btn-no-style {
   background: none;
   border: none;
@@ -133,6 +192,7 @@ main {
   margin: -1.5% 0 2% 0;
 }
 
+<<<<<<< HEAD
 .upvote-btn {
   background-color: #197d0f;
   transition: background-color .1s;
@@ -142,6 +202,8 @@ main {
   background-color: #1f9c13;
 }
 
+=======
+>>>>>>> 35910b69a61e67c169645ccca2cb9515131bf107
 .comment-form {
   margin-bottom: 5%;
 }

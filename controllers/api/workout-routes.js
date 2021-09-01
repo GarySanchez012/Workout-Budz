@@ -1,0 +1,115 @@
+const router = require('express').Router();
+const sequelize = require('../../config/connection');
+const { User, Comment, Workout } = require('../../models');
+const withAuth = require('../../utils/auth');
+
+// get all workouts
+router.get('/', (req, res) => {
+  console.log('======================');
+  Workout.findAll({
+   
+    include: [
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
+  })
+    .then(dbWorkoutData => res.json(dbWorkoutData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.get('/:id', (req, res) => {
+  Workout.findOne({
+    where: {
+      id: req.params.id
+    },
+    include: [
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
+  })
+    .then(dbWorkoutData => {
+      if (!dbWorkoutData) {
+        res.status(404).json({ message: 'No workout found with this id' });
+        return;
+      }
+      res.json(dbWorkoutData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.post('/', withAuth, (req, res) => {
+  console.log(req.body);
+  req.body.user_id= req.session.user_id
+  Workout.create(req.body)
+    .then(dbWorkoutData => res.json(dbWorkoutData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.put('/upvote', withAuth, (req, res) => {
+  // custom static method created in models/Post.js
+  Workout.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
+    .then(updatedVoteData => res.json(updatedVoteData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.put('/:id', withAuth, (req, res) => {
+  Workout.update(
+    {
+      title: req.body.title
+    },
+    {
+      where: {
+        id: req.params.id
+      }
+    }
+  )
+    .then(dbWorkoutData => {
+      if (!dbWorkoutData) {
+        res.status(404).json({ message: 'No workout found with this id' });
+        return;
+      }
+      res.json(dbWorkoutData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.delete('/:id', withAuth, (req, res) => {
+  console.log('id', req.params.id);
+  Workout.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+    .then(dbWorkoutData => {
+      if (!dbWorkoutData) {
+        res.status(404).json({ message: 'No workout found with this id' });
+        return;
+      }
+      res.json(dbWorkoutData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+module.exports = router;
