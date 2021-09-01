@@ -66,8 +66,6 @@ router.get('/new-workout', (req,res) => {
   axios.request(options).then(function (response) {
     console.log(response.data);
 
-    // const firstFive = response.data.slice(0, 5);
-
     const randomFive = getRandom(response.data, 5);
 
     res.render('new-workout', {
