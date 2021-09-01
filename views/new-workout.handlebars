@@ -9,13 +9,10 @@
    
     <div>
         {{#each exercises }}
-            <img src={{gifUrl}} />
-            <input type="checkbox" name={{name}} value={{name}}>
-            <label for={{name}}> {{name}}</label><br>
+            <img src={{gifUrl}} class="exercise-image"/>
+            <label for={{name}} class="exercise-label"> {{name}}</label><br>
         {{/each}}
-
     </div>
-
 
     <button type="submit" class="btn">Create</button>
   </form>
