@@ -3,25 +3,16 @@
 }
 
 body, html {
-<<<<<<< HEAD
-=======
   background-color: #082952;
->>>>>>> 35910b69a61e67c169645ccca2cb9515131bf107
   height: 100%;
   padding: 0;
   margin: 0;
   font-family: sans-serif;
-<<<<<<< HEAD
-  color: #333;
-}
-
-=======
   color: rgb(201, 23, 23);
 }
 
 
 
->>>>>>> 35910b69a61e67c169645ccca2cb9515131bf107
 a {
   text-decoration: none;
   color: #225ca3;
@@ -103,8 +94,6 @@ main {
   padding: 2% 4%;
 }
 
-<<<<<<< HEAD
-=======
 
 .ui[class*="center aligned"].grid {
   background-color: purple;
@@ -149,7 +138,6 @@ body > .grid {
 }
 
 
->>>>>>> 35910b69a61e67c169645ccca2cb9515131bf107
 .btn-no-style {
   background: none;
   border: none;
@@ -192,18 +180,6 @@ body > .grid {
   margin: -1.5% 0 2% 0;
 }
 
-<<<<<<< HEAD
-.upvote-btn {
-  background-color: #197d0f;
-  transition: background-color .1s;
-}
-
-.upvote-btn:hover {
-  background-color: #1f9c13;
-}
-
-=======
->>>>>>> 35910b69a61e67c169645ccca2cb9515131bf107
 .comment-form {
   margin-bottom: 5%;
 }
