@@ -15,11 +15,7 @@ async function loginFormHandler(event) {
     });
 
     if (response.ok) {
-<<<<<<< HEAD
-      document.location.replace('/dashboard/');
-=======
       document.location.replace('/new-workout');
->>>>>>> 35910b69a61e67c169645ccca2cb9515131bf107
     } else {
       alert(response.statusText);
     }
@@ -45,11 +41,7 @@ async function signupFormHandler(event) {
     });
 
     if (response.ok) {
-<<<<<<< HEAD
-      document.location.replace('/dashboard/');
-=======
       document.location.replace('/new-workout');
->>>>>>> 35910b69a61e67c169645ccca2cb9515131bf107
     } else {
       alert(response.statusText);
     }

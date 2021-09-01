@@ -1,13 +1,8 @@
 const router = require('express').Router();
-<<<<<<< HEAD
-const sequelize = require('../config/connection');
-const { Post, User, Comment, Vote } = require('../models');
-=======
 const axios = require("axios").default;
 
 const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
->>>>>>> 35910b69a61e67c169645ccca2cb9515131bf107
 const withAuth = require('../utils/auth');
 
 // get all posts for dashboard
@@ -23,10 +18,6 @@ router.get('/', withAuth, (req, res) => {
       'post_url',
       'title',
       'created_at',
-<<<<<<< HEAD
-      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-=======
->>>>>>> 35910b69a61e67c169645ccca2cb9515131bf107
     ],
     include: [
       {
@@ -60,10 +51,6 @@ router.get('/edit/:id', withAuth, (req, res) => {
       'post_url',
       'title',
       'created_at',
-<<<<<<< HEAD
-      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-=======
->>>>>>> 35910b69a61e67c169645ccca2cb9515131bf107
     ],
     include: [
       {
@@ -97,8 +84,6 @@ router.get('/edit/:id', withAuth, (req, res) => {
     });
 });
 
-<<<<<<< HEAD
-=======
 
 // render the page for creating a new workout
 router.get('/new-workout', (req,res) => {
@@ -144,5 +129,4 @@ router.get('/new-workout', (req,res) => {
   });
 })
 
->>>>>>> 35910b69a61e67c169645ccca2cb9515131bf107
 module.exports = router;
