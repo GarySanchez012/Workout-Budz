@@ -84,14 +84,15 @@ header {
   position: relative;
   background-image: url(./images/wi224fb1c492c-b978-4875-88ae-e54e0251133c124759989.jpg);
   background-size:cover;
-  background-position:center;
   background-clip: border-box;
-  border-bottom: 1px solid #ccc;
+  box-shadow: 0 0 10px rgb(182 0 199 / 100%);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 1%;
   height: 80px;  
+  position: sticky;
+  top: 0;
 }
 
 header h1 {
@@ -99,6 +100,10 @@ header h1 {
 }
 
 #navbar-wrapper {
+  position: sticky;
+  top: 0;
+  background-attachment:fixed;
+  background-position: 80%;
 }
 
 main {
@@ -237,4 +242,10 @@ footer {
   justify-content: center;
   padding: 1%;
   font-size: 110%;
+}
+
+@media screen and (max-width: 980px) {
+
+header {
+  position: relative
 }
