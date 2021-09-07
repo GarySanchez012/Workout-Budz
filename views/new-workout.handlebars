@@ -6,13 +6,16 @@
       <label for="post-title">Title</label>
       <input type="text" id="post-title" name="post-title" />
     </div>
-   
-    <div>
+  
+    <div class='exercise-container'>
         {{#each exercises }}
+          <div class='exercise-card' >
             <img src={{gifUrl}} class="exercise-image"/>
             <label for={{name}} class="exercise-label"> {{name}}</label><br>
+           </div>
         {{/each}}
     </div>
+
 
     <button type="submit" class="btn">Create</button>
   </form>
