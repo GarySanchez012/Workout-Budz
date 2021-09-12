@@ -12,14 +12,32 @@
   <div class="wrapper">
     <header class="navbar-wrapper">
       <h1>
-        <a href="/">Workout Budz</a>
+        <a href="/">
+          <div class="st">
+
+            <div class="st-top">
+              <div class="st-bound st-bound-full"></div>
+              <p><span class="st-drop st-stranger-w">W</span><span class="st-stranger-o">o</span>rk<span class="st-stranger-o">o</span><span class="st-stranger-u">u</span><span class="st-stranger-">t</span>
+              </p>
+              <div class="st-bound st-bound-mini st-bound-left"></div>
+              <div class="st-bound st-bound-mini st-bound-right"></div>
+            </div>
+
+            <div class="st-bottom">
+              <p>B<span class="st-things-u">u</span><span class="st-things-d">d</span><span class="st-things-z">z</span></p>
+            </div>
+
+          </div>
+        </a>
       </h1>
       <nav>
         {{#if loggedIn}}
         <a href="/new-workout">my workouts</a>
         <button id="logout" class="btn-no-style">logout</button>
         {{else}}
-        <a href="/login">login</a>
+        <a href="/login">
+        <button class="ui inverted violet button">
+        login</button></a>
         {{/if}}
       </nav>
     </header>
