@@ -1,7 +1,6 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
 }
 
 body, html {
@@ -17,14 +16,7 @@ body, html {
   color: rgb(201, 23, 23);
 }
 
-.ui.inverted.violet.button {
-  text-decoration: none;
-  color: #fc0606;
-  font-weight: bold;
-  transition: color .1s;
-  padding: .78571429em 1.5em .78571429em;
-  font-weight: 700;
-}
+
 
 a:hover {
   color: #dd0f00;
@@ -33,7 +25,7 @@ a:hover {
 button {
   background-color: transparent;
   border: 0;
-  padding: 20%;
+  padding: 15px 10px 15px;
   color: white;
   font-weight: bold;
   transition: background-color .1s;
@@ -250,6 +242,12 @@ body > .grid {
   padding-bottom: 240px;
 }
 
+.workout-list {
+  margin-top: 10px;
+  border-radius: 50px;
+  display: inline-table;
+  backdrop-filter: contrast(0.5);
+}
 
 .btn-no-style {
   background: none;
